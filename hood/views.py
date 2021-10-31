@@ -57,7 +57,7 @@ def update_profile(request, id):
 
 @login_required(login_url='/accounts/login/')
 def hood(request):
-    # current_user = request.user
+    
     if request.method == 'POST':
         form = NewHoodForm(request.POST, request.FILES)
         if form.is_valid():
