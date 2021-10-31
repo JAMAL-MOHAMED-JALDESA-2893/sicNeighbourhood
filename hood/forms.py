@@ -30,4 +30,14 @@ class PostForm(forms.ModelForm):
 class NewHoodForm(forms.ModelForm):
     class Meta:
         model = Neighbourhood
-        exclude = ('admin',)        
+        exclude = ('admin',)  
+
+class NewBusinessForm(forms.ModelForm):
+    class Meta:
+        model = Business
+        exclude = ('user',)
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        exclude = ('user',)              
