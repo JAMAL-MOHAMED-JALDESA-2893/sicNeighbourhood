@@ -93,3 +93,25 @@ def view_hood(request, id):
     hood = Neighbourhood.objects.get(id=id)
     biz = Business.objects.filter(business_hood=id)
     post = Post.objects.filter(neighbourhood=id)
+
+    return render(request, 'view_hood.html',  {
+        'hood': hood,'business':biz,'post': post
+    })
+
+
+@login_required(login_url='/accounts/login/')
+def new_business(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewBusinessForm(request.POST, request.FILES)
+        if form.is_valid():
+            biz = form.save(commit=False)
+            biz.user = current_user
+
+            biz.save()
+
+        return redirect('index')
+
+    else:
+        form = NewBusinessForm()
+    return render(request, 'new_business.html', {"form": form})
