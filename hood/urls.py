@@ -14,11 +14,7 @@ urlpatterns = [
     path('hood_info/(?P<id>\d+)', views.view_hood, name='view_hood'),
     path('new_business/', views.new_business, name='new_business'),
     path('newhood/', views.hood, name='hood'),
-    path('new_post', views.new_post, name='post'),
-
-
-   
-
+    path('new_post', views.new_post, name='post'),  
 
 ]
 if settings.DEBUG:
