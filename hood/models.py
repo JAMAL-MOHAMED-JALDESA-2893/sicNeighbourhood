@@ -26,3 +26,11 @@ class Neighbourhood(models.Model):
     def update_hood(self):
         hood_name = self.hood_name
         self.hood_name = hood_name    
+
+    @classmethod
+    def find_hood(cls, hood_id):
+        return cls.objects.filter(id=hood_id)
+
+    @property
+    def occupants_count(self):
+        return self.neighbourhood_users.count()    
