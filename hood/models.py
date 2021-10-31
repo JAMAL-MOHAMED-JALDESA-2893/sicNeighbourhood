@@ -12,3 +12,13 @@ class Neighbourhood(models.Model):
     hood_photo = CloudinaryField('photo', default='photo')
     admin = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='admin')
+
+
+    def __str__(self):
+        return self.hood_name
+
+    def save_hood(self):
+        self.save()
+
+    def delete_hood(self):
+        self.delete()    
