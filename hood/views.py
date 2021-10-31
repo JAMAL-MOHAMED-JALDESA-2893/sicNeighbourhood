@@ -71,3 +71,11 @@ def hood(request):
     else:
         form = NewHoodForm()
     return render(request, 'newhood.html', {"form": form})    
+
+
+@login_required(login_url='/accounts/login/')
+def joinhood(request, id):
+    hood = get_object_or_404(Neighbourhood, id=id)
+    request.user.profile.neighbourhood = hood
+    request.user.profile.save()
+    return redirect('index')    
