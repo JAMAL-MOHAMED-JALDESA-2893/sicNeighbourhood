@@ -22,3 +22,7 @@ class Neighbourhood(models.Model):
 
     def delete_hood(self):
         self.delete()    
+
+    def update_hood(self):
+        hood_name = self.hood_name
+        self.hood_name = hood_name    
