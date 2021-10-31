@@ -53,3 +53,21 @@ def update_profile(request, id):
         return HttpResponseRedirect("/profile")
 
     return render(request, "registration/update_profile.html", {"form": form, "form2": form2})
+
+
+@login_required(login_url='/accounts/login/')
+def hood(request):
+    # current_user = request.user
+    if request.method == 'POST':
+        form = NewHoodForm(request.POST, request.FILES)
+        if form.is_valid():
+            hood = form.save(commit=False)
+            hood.admin = request.user
+
+            hood.save()
+
+        return redirect('index')
+
+    else:
+        form = NewHoodForm()
+    return render(request, 'newhood.html', {"form": form})    
