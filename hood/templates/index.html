@@ -39,9 +39,10 @@
 
 
                 <div style="padding-top:1%;padding-bottom:1%">
+                  <br>
                     {%if request.user.profile.neighbourhood == hood %}
 
-                    <a class="btn btn-danger" href="{%url 'leavehood' hood.id%}">Exit Hood</a>
+                    <a class="btn btn-danger" href="{%url 'leavehood' hood.id%}">Exit the Hood</a>
 
                     {%elif not request.user.profile.neighbourhood%}
 
