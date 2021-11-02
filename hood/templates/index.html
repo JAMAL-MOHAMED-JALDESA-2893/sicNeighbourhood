@@ -17,7 +17,7 @@
                 style="background-color: rgb(250, 246, 246);box-sizing: border-box; margin-top:2%;box-shadow: 0vh 0vh 1vh gainsboro;">
                 <div class="row" style="padding-top: 1%">
                     <div class="col-md-12">
-                        <h4 style="font-weight:600; color: rgb(59, 58, 58);">Name: <a style="color:rgb(48, 45, 45);" href="{% url 'view_hood' id=hood.id %}" class="text-right"
+                        <h4 style="font-weight:600; color: rgb(59, 58, 58);">Hood: <a style="color:rgb(48, 45, 45);" href="{% url 'view_hood' id=hood.id %}" class="text-right"
                                 style="text-decoration: none;">{{hood.hood_name}}
                                 
                             </a></4>
@@ -45,8 +45,8 @@
 
                     {%elif not request.user.profile.neighbourhood%}
 
-
-                    <a class="btn btn-info" href="{%url 'joinhood' hood.id%}">Join Hood</a>
+                     <br>
+                    <a class="btn btn-success" href="{%url 'joinhood' hood.id%}">Join the Hood</a>
 
                     {%endif%}
                 </div>

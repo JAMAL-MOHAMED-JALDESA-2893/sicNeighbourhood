@@ -28,7 +28,7 @@
                                 {%elif not request.user.profile.neighbourhood%}
 
 
-                                <a class="btn btn-info" href="{%url 'joinhood' hood.id%}">Join Hood</a>
+                                <a class="btn btn-success" href="{%url 'joinhood' hood.id%}">Join Hood</a>
 
                                 {%endif%}
                             </div>
@@ -57,7 +57,7 @@
 
             <a href="#{{business.id}}" data-toggle="modal" data-target="#{{business.id}}"
                 style="font-weight: 700; font-size: 12pt;">
-                <li>{{business.business_name}}</li>
+                <li style="color:black;">{{business.business_name}}</li>
             </a>
             <div class="modal fade" id="{{business.id}}" role="dialog">
                 <div class="modal-dialog modal-xl">
@@ -93,8 +93,8 @@
 
     <h2 class="text-center" style="font-family: 'Kanit', sans-serif;">Posts</h2>
     <div class="text-center">
-        <a href="{%url 'post'%}" class="btn btn-info"><i class="fa fa-plus-circle"></i><span style="color:white">Add
-                Posts</span></a>
+        <a href="{%url 'post'%}" class="btn btn-success"><i class=""></i><span style="color:white">Add
+                Post</span></a>
 
     </div>
 
