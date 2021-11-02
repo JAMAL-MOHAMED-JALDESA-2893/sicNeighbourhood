@@ -17,7 +17,7 @@ A Django application that allows users know about their Neighborhood join hoods,
 * Only the admin can create a new neighborhood 
 
 
-# Usage / installation instructions
+## Usage / installation instructions
 ##### Cloning the repository:
     https://github.com/JAMAL-MOHAMED-JALDESA-2893/sicNeighbourhood
 
